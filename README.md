@@ -7,7 +7,7 @@
 Atualmente **disponível em português** e **futuramente em inglês**;
 
  ### Engrish
-**Project in progress**. You may **experience problems**. I recommend using [Google Ghrome](https://www.google.com/chrome/) `v87.0.4280.88`;
+**Project in progress**. You may **experience problems**. I recommend using [Google Chrome](https://www.google.com/chrome/) `v87.0.4280.88`;
 Currently **available in Portuguese**, available in **English in the future**;
 
 > simulating the interface of an operating system with web technologies (this is to be a portfolio)
