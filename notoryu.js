@@ -3,7 +3,6 @@ function getAge() {
 }
 
 
-// <a href="bbb" target="_blank">aaa</a>
 const choices = [ 
     [ ['oi'], ['oi'] ],
     [ ['meaw, você pode comentar sobre você?'], 
@@ -42,6 +41,7 @@ function MessageInfo(info) {
     this.sendMessage = function(data) {
         let username = data.username
         let avatar = data.avatar
+
         let message = ((data.username == 'meaw') ? this.messageList[1][0] : data.message)
         let that = this
 
@@ -54,12 +54,12 @@ function MessageInfo(info) {
             setTimeout(()=>{
                 that.scrollChatBottom()
                 chat.append($(msgContainer))
-            $('#meaw-is-typing').css('opacity', '0')
+                $('#meaw-is-typing').css('opacity', '0')
                 that.messageList[1].shift()
     
                 if (that.messageList[1][0]) {
                     setTimeout(()=> {
-                        that.sendMessage({username: 'meawto', avatar: 'https://avatars0.githubusercontent.com/u/44252635?s=460&u=18c398ad431d7c96cf4bcdd6d8a19f48cccaaa25&v=4'})
+                        that.sendMessage({username: 'meaw', avatar: 'https://avatars0.githubusercontent.com/u/44252635?s=460&u=18c398ad431d7c96cf4bcdd6d8a19f48cccaaa25&v=4'})
                     }, randomTimer)
                 } else {
                     that.finishChoice()
@@ -127,7 +127,7 @@ MessageInfo.prototype.renderMessage = function() {
             } else {
                 $('#input-blinking-cursor').addClass("input-blinking-cursor-anim")
                 setTimeout(()=>{
-                    that.sendMessage({username: 'meawto', avatar: 'https://avatars0.githubusercontent.com/u/44252635?s=460&u=18c398ad431d7c96cf4bcdd6d8a19f48cccaaa25&v=4'})
+                    that.sendMessage({username: 'meaw', avatar: 'https://avatars0.githubusercontent.com/u/44252635?s=460&u=18c398ad431d7c96cf4bcdd6d8a19f48cccaaa25&v=4'})
                 }, timer = (that.message.length*50 > 1400) ? that.message.length*50 : 1400)
             }
         }, 400)
@@ -150,7 +150,7 @@ $(".chat-choices").click(function() {
     }
     
     setTimeout(()=>{
-        var Notoryu = new MessageInfo({elem: $(this)})
+        Notoryu = new MessageInfo({elem: $(this)})
     }, 1000)
     
 })

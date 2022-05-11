@@ -39,6 +39,7 @@
 
 #on-load form input[type="text"] {
     background: transparent;
+    border-bottom: 0.2rem solid rgba(255, 255, 255, 0.1);
     width: 24rem;
     border-radius: 0.4rem;
     text-align: center;
@@ -51,6 +52,10 @@
     top: 16rem;
     opacity: 0;
     transition: top 2s, opacity 3s;
+}
+
+#on-load form input[type="text"]:focus {
+    border-bottom: 0.2rem solid rgba(255, 255, 255, 0);
 }
 
 #on-load form input[type="text"]::placeholder {

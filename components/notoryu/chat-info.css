@@ -35,6 +35,4 @@
     height: 3rem;
     display: block;
     object-fit: cover;
-    transform: scale(1.2);
-    transform-origin: top center;
 }

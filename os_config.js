@@ -44,7 +44,6 @@ function OSwindowConfig() {
     }
 
     this.changeTheme = function(x) {
-        console.log(x)
         if (x) {
             // main color
             main_dark_color = [ '#131313', '#161616', '#1d1d1d', '#232323', '#272727', '#303030', '#3f3f3f', '#c2c2c2', '#eeeeee' ]
