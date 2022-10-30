@@ -1,4 +1,4 @@
-[<h1 style="font-size: 3rem; text-align: center; font-weight: 100; color: #450052" onmouseover="this.style.color = '#c100e6'" onmouseout="this.style.color = '#450052'">NOTO OS</h1>](https://meawcafe.github.io/)
+# [NOTO OS](https://meawcafe.github.io/)
 
 [<img alt="NOTO OS preview" src="https://i.imgur.com/tv1Cioy.png" onmouseover="this.style.transform = 'scale(1.03)'; this.style.boxShadow = '0 0.6rem 1.2rem black';" onmouseout="this.style.transform = 'scale(1)'; this.style.boxShadow = '0 0.6rem 1.2rem transparent'" style="border-radius: 0.8rem; box-shadow: 0 0.6rem 1.2rem transparent; display: block; margin: 0 auto; margin-bottom: 6rem; transition: transform 100ms ease-out, box-shadow 200ms">](https://meawcafe.github.io/)
 
