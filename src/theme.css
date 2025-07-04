@@ -1,0 +1,28 @@
+.white-mode {
+  --accent-color1: #4e54c8;
+  --accent-color2: #8f94fb;
+
+  --background1: #fff;
+  --background2: #f7f7f7;
+  --background3: #e2e2e2;
+
+  --text1: #222222;
+  --text2: #444444;
+  --text3: #666666;
+  --text4: #888888;
+  --text5: #aaaaaa;
+
+  --reverse-text1: #fff;
+  --reverse-text2: #f2f2f2;
+  --reverse-text3: #e6e6e6;
+
+  /* alert colors */
+  --danger1: #eb636e;
+  --danger2: #ecaf7c;
+
+  --warning1: #FFA41B;
+  --warning2: #FFD60A;
+
+  --success1: #00B09B;
+  --success2: #94eb4c;
+}
