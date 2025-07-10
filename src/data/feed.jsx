@@ -507,7 +507,7 @@ export default [
             <img
               src="https://skillicons.dev/icons?i=twitter"
               alt="X"
-              style={{ width: "100%", width: "4rem", height: "auto" }}
+              style={{ width: "4rem", height: "auto" }}
             />
 
             <span style={{ fontWeight: "bold" }}>@meawcafe</span>
@@ -528,7 +528,7 @@ export default [
             <img
               src="https://skillicons.dev/icons?i=github"
               alt="Skills"
-              style={{ width: "100%", width: "4rem", height: "auto" }}
+              style={{ width: "4rem", height: "auto" }}
             />
 
             <span style={{ fontWeight: "bold" }}>/meawcafe</span>
@@ -549,7 +549,7 @@ export default [
             <img
               src="https://skillicons.dev/icons?i=linkedin"
               alt="Skills"
-              style={{ width: "100%", width: "4rem", height: "auto" }}
+              style={{ width: "4rem", height: "auto" }}
             />
 
             <span style={{ fontWeight: "bold" }}>Milton M</span>
@@ -570,7 +570,7 @@ export default [
             <img
               src="https://skillicons.dev/icons?i=gmail"
               alt="Skills"
-              style={{ width: "100%", width: "4rem", height: "auto" }}
+              style={{ width: "4rem", height: "auto" }}
             />
 
             <span style={{ fontWeight: "bold" }}>Email me</span>
