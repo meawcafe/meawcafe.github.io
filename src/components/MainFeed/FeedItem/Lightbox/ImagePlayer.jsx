@@ -40,13 +40,13 @@ export default function ImagePlayer({
       {/* navigation */}
       <div className="absolute flex justify-between w-full px-4 top-1/2 transform -translate-y-1/2">
         <span
-          className="bg-black/50 p-2 rounded-full cursor-pointer"
+          className="bg-black/50 p-2 rounded-full cursor-pointer border border-white/50"
           onClick={() => handleNavigation(-1)}
         >
           <ArrowLeftIcon size={18} color="white" weight="bold" />
         </span>
         <span
-          className="bg-black/50 p-2 rounded-full cursor-pointer"
+          className="bg-black/50 p-2 rounded-full cursor-pointer border border-white/50"
           onClick={() => handleNavigation(1)}
         >
           <ArrowLeftIcon

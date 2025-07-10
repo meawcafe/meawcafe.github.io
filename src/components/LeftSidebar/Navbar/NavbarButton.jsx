@@ -16,13 +16,15 @@ export default function NavbarButton({
 
   return (
     <button
-      className="flex items-center w-full gap-2 p-2 rounded-2xl transition-colors hover:bg-[var(--background3)]"
+      className="flex items-center w-full gap-2 p-2 rounded-2xl hover:bg-[var(--background3)]"
       style={{
         backgroundColor: focusedFeedItemId == buttonId && "var(--text1)",
         color:
           focusedFeedItemId == buttonId
             ? "var(--reverse-text1)"
             : "var(--text1)",
+        margin: focusedFeedItemId == buttonId ? "0.6rem 0" : "0",
+        transition: "200ms 300ms cubic-bezier(.57,.01,.27,1)",
       }}
       onClick={handleClick}
     >
@@ -36,7 +38,7 @@ export default function NavbarButton({
       </IconContext.Provider>
 
       <span
-        className="text-sm"
+        className="text-sm select-none"
         style={{
           fontWeight: focusedFeedItemId == buttonId ? "bold" : "normal",
         }}

@@ -10,7 +10,7 @@ export default function InteractionItem({
 
   return (
     <div
-      className={`flex items-center text-sm gap-1 cursor-pointer text-[var(--text3)] hover:text-[var(--text1)] duration-200 active:scale-120`}
+      className={`flex items-center text-sm gap-1 cursor-pointer text-[var(--text3)] hover:text-[var(--text1)] duration-200 active:scale-120 select-none`}
       onClick={() => {
         if (!enableInteraction) return;
         setIsChecked(!isChecked);

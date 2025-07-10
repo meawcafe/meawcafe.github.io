@@ -54,7 +54,7 @@ export default function Lightbox({
 
       {/* close lightbox */}
       <div
-        className="absolute top-4 right-4 cursor-pointer rounded-full bg-black/50 p-2"
+        className="absolute top-4 right-4 cursor-pointer rounded-full bg-black/50 p-2 border border-white/50"
         onClick={onClose}
       >
         <XIcon size={18} color="white" weight="bold" />

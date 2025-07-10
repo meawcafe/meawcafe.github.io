@@ -6,19 +6,23 @@ import { useRef, useState, useEffect } from "react";
 export default function App() {
   const feedContainerRef = useRef(null);
   const [scrollHeight, setScrollHeight] = useState(0);
+  const [scrollOnTop, setScrollOnTop] = useState(true);
   const [feedOffsetTopInfo, setFeedOffsetTopInfo] = useState({
     "about-me": null,
     education: null,
     "work-experience": null,
     skills: null,
     projects: null,
-    // contact: null,
+    "contact-me": null,
   });
   const [focusedFeedItemId, setFocusedFeedItemId] = useState("about-me");
 
   const handleScroll = () => {
     const container = feedContainerRef.current;
     const scrollTop = container.scrollTop;
+
+    // Update scrollOnTop state based on scroll position
+    setScrollOnTop(scrollTop < 15);
 
     // compare the scrollTop with the offsetTop of each section
     const visibleSection = Object.entries(feedOffsetTopInfo).reduce(
@@ -54,6 +58,7 @@ export default function App() {
             setFeedOffsetTopInfo,
             focusedFeedItemId,
             scrollHeight,
+            scrollOnTop,
           }}
         />
         <RightSidebar />

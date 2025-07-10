@@ -2,7 +2,7 @@
   "name": "meawcafe.github.io",
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://meawcafe.github.io/",
+  "homepage": "https://meawcafe.github.io",
   "description": "A personal blog and portfolio website.",
   "scripts": {
     "dev": "vite",

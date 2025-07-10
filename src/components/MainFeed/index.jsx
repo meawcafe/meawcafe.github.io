@@ -1,16 +1,28 @@
 import FeedItem from "./FeedItem";
 import FeedTabs from "./FeedTabs";
 import feed from "../../data/feed.jsx";
+import { useEffect } from "react";
 
 export default function MainFeed({
   feedContainerRef,
   setFeedOffsetTopInfo,
   focusedFeedItemId,
   scrollHeight,
+  scrollOnTop,
 }) {
+  useEffect(() => {
+    console.log(scrollOnTop);
+  }, [scrollOnTop]);
+
   return (
-    <div className="w-full flex-1 overflow-x-hidden overflow-y-auto flex flex-col p-[3%] pb-0 relative">
-      <FeedTabs />
+    <div
+      className="w-full flex-1 overflow-x-hidden overflow-y-auto flex flex-col p-[3%] pb-0 relative"
+      style={{
+        paddingTop: scrollOnTop ? `3%` : "0.4rem",
+        transition: "200ms cubic-bezier(.57,.01,.27,1)",
+      }}
+    >
+      <FeedTabs {...{ scrollOnTop }} />
 
       <div
         ref={feedContainerRef}

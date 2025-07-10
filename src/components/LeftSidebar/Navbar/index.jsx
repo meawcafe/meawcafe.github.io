@@ -10,7 +10,7 @@ import NavbarButton from "./NavbarButton";
 
 export default function Navbar({ focusedFeedItemId }) {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col">
       <NavbarButton
         icon={<UserCircleIcon />}
         label={"About me"}
@@ -44,7 +44,7 @@ export default function Navbar({ focusedFeedItemId }) {
       <NavbarButton
         icon={<ChatCircleTextIcon />}
         label={"Contact me"}
-        buttonId={"contact"}
+        buttonId={"contact-me"}
         {...{ focusedFeedItemId }}
       />
     </div>

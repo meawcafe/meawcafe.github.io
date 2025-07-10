@@ -1,6 +1,12 @@
-export default function FeedTabs() {
+export default function FeedTabs({ scrollOnTop }) {
   return (
-    <div className="w-full h-min flex text-sm items-center justify-between mb-4 bg-[var(--background1)]">
+    <div
+      className="w-full h-min flex text-sm items-center justify-between bg-[var(--background1)] select-none"
+      style={{
+        paddingBottom: scrollOnTop ? "1rem" : "0.4rem",
+        transition: "200ms cubic-bezier(.57,.01,.27,1)",
+      }}
+    >
       <span className="text-base cursor-pointer font-bold">Recents</span>
       <div className="flex gap-4">
         <span className="cursor-pointer hover:font-bold">Following</span>

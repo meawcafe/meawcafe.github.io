@@ -12,7 +12,7 @@ export default function Profile() {
 
       {/* name and description */}
       <h2 className="text-xl font-bold w-max">Milton M</h2>
-      <p className="mb-4 text-sm">Web Developer</p>
+      <p className="mb-4 text-sm">Full-Stack Developer</p>
     </div>
   );
 }
