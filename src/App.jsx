@@ -95,11 +95,9 @@ export default function App() {
       if (deltaX > 0) {
         setShowNavHelperLeft(true);
         setShowNavHelperRight(false);
-        console.log("left");
       } else {
         setShowNavHelperRight(true);
         setShowNavHelperLeft(false);
-        console.log("right");
       }
     } else {
       setShowNavHelperLeft(false);

@@ -15,7 +15,7 @@ export default function TouchNavHelper({
           opacity: showNavHelperLeft ? 1 : 0,
           scale: showNavHelperLeft ? 1 : 0,
           transition:
-            "left 300ms cubic-bezier(.26,.01,0,1.59), opacity 300ms cubic-bezier(.26,.01,0,1.59), scale 300ms cubic-bezier(.26,.01,0,1.59)",
+            "left 300ms cubic-bezier(.26,.01,0,1.59), opacity 300ms cubic-bezier(.26,.01,0,1.59), scale 300ms cubic-bezier(.26,.01,0,1.59), top 500ms ease",
         }}
       >
         <ArrowLineRightIcon
@@ -33,7 +33,7 @@ export default function TouchNavHelper({
           opacity: showNavHelperRight ? 1 : 0,
           scale: showNavHelperRight ? 1 : 0,
           transition:
-            "right 300ms cubic-bezier(.26,.01,0,1.59), opacity 300ms cubic-bezier(.26,.01,0,1.59), scale 300ms cubic-bezier(.26,.01,0,1.59)",
+            "right 300ms cubic-bezier(.26,.01,0,1.59), opacity 300ms cubic-bezier(.26,.01,0,1.59), scale 300ms cubic-bezier(.26,.01,0,1.59), top 500ms ease",
         }}
       >
         <ArrowLineLeftIcon
