@@ -89,13 +89,7 @@ export default function App() {
     const currentY = event.touches[0].clientY;
     const deltaX = currentX - touchStartRef.current;
 
-    // Calcula o centro vertical da tela
-    const windowHeight = window.innerHeight - 200;
-    const centerY = windowHeight / 2;
-
-    // Calcula um deslocamento suave baseado no movimento vertical
-    const offsetY = (currentY - centerY) * 0.1; // Multiplicador 0.1 para movimento sutil
-    setTouchPositionY(Math.floor(centerY + offsetY)); // Centraliza e adiciona deslocamento
+    setTouchPositionY(currentY - 48);
 
     if (Math.abs(deltaX) > 100) {
       if (deltaX > 0) {

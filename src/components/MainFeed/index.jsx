@@ -22,9 +22,11 @@ export default function MainFeed({
     <div
       className={mainFeedClasses}
       style={{
-        paddingTop: scrollOnTop ? `3%` : "0.4rem",
+        paddingTop: scrollOnTop ? `2rem` : "0.4rem",
         scale: 1,
         opacity: 1,
+        transition:
+          "padding-top 200ms cubic-bezier(.57,.01,.27,1), scale 400ms 100ms cubic-bezier(.57,.01,.27,1), opacity 500ms ease",
       }}
     >
       <FeedTabs {...{ scrollOnTop }} />

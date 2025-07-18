@@ -10,7 +10,7 @@ export default function TouchNavHelper({
       <div
         className="absolute w-max left-0 flex bg-white/40 z-30 p-6 rounded-full backdrop-blur-sm"
         style={{
-          top: touchPositionY - 16,
+          top: touchPositionY,
           left: showNavHelperLeft ? "2rem" : "-5rem",
           opacity: showNavHelperLeft ? 1 : 0,
           scale: showNavHelperLeft ? 1 : 0,
@@ -28,7 +28,7 @@ export default function TouchNavHelper({
       <div
         className="absolute w-max right-0 flex bg-white/40 z-30 p-6 rounded-full backdrop-blur-sm"
         style={{
-          top: touchPositionY - 16,
+          top: touchPositionY,
           right: showNavHelperRight ? "2rem" : "-5rem",
           opacity: showNavHelperRight ? 1 : 0,
           scale: showNavHelperRight ? 1 : 0,

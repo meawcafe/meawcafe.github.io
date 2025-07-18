@@ -1,7 +1,7 @@
 export default function FeedTabs({ scrollOnTop }) {
   return (
     <div
-      className="w-full h-min flex text-sm items-center justify-between select-none"
+      className="w-full h-min flex text-sm items-center justify-between select-none pr-[1rem]"
       style={{
         paddingBottom: scrollOnTop ? "1rem" : "0.4rem",
         transition: "200ms cubic-bezier(.57,.01,.27,1)",
