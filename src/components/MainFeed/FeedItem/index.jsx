@@ -60,7 +60,7 @@ export default function FeedItem({
       <div
         id={section_id}
         ref={feedItemRef}
-        className="flex flex-col p-4 rounded-2xl bg-[var(--background2)]"
+        className="flex flex-col p-4 rounded-2xl bg-[var(--background1)]"
       >
         <ItemHeader {...user} timestamp={timestamp} />
 
@@ -90,7 +90,7 @@ export default function FeedItem({
                 className="w-full h-20 absolute bottom-0 left-0 flex pointer-events-none"
                 style={{
                   background: isOverflow
-                    ? "linear-gradient(to top, var(--background2) 4%, rgba(255, 255, 255, 0))"
+                    ? "linear-gradient(to top, var(--background1) 4%, rgba(255, 255, 255, 0))"
                     : "linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0))",
                 }}
               ></div>

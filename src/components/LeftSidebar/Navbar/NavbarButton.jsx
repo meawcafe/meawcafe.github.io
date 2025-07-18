@@ -16,7 +16,7 @@ export default function NavbarButton({
 
   return (
     <button
-      className="flex items-center w-full gap-2 p-2 rounded-2xl hover:bg-[var(--background3)]"
+      className="flex items-center w-full gap-2 p-2 rounded-2xl"
       style={{
         backgroundColor: focusedFeedItemId == buttonId && "var(--text1)",
         color:
