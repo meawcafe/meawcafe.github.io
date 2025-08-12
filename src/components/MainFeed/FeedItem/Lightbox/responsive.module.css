@@ -1,0 +1,18 @@
+@media (max-width: 768px) {
+  .lightboxContainer {
+    flex-direction: column-reverse;
+  }
+  .feedDetailsContainer {
+    width: 100%;
+    height: auto;
+  }
+
+  /* gallery */
+  .galleryTitle {
+    display: none;
+  }
+
+  .galleryContainer {
+    display: none;
+  }
+}

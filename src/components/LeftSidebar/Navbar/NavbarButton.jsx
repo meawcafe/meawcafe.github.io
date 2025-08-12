@@ -1,17 +1,24 @@
 import { IconContext } from "@phosphor-icons/react";
+import { useScrollStore } from "../../../store/scroll";
+import { useTouchStore } from "../../../store/touch";
 
-export default function NavbarButton({
-  icon,
-  label,
-  buttonId,
-  focusedFeedItemId,
-}) {
+export default function NavbarButton({ icon, label, buttonId }) {
+  const focusedFeedItemId = useScrollStore((state) => state.focusedFeedItemId);
+  const feedContainerRef = useScrollStore((state) => state.feedContainerRef);
+
+  const { setSectionIndex } = useTouchStore.getState();
+
   function handleClick() {
-    // Logic to handle click event, e.g., scroll to the section
-    document.getElementById(buttonId)?.scrollIntoView({
+    setSectionIndex(1);
+    const target = feedContainerRef.current.querySelector(`#${buttonId}`);
+    feedContainerRef.current.scrollTo({
+      top: target.offsetTop,
       behavior: "smooth",
-      block: "start",
     });
+    // document.getElementById(buttonId)?.scrollIntoView({
+    //   behavior: "smooth",
+    //   block: "start",
+    // });
   }
 
   return (

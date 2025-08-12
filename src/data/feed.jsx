@@ -327,7 +327,7 @@ export default [
         <span style={{ fontSize: "0.8rem" }}>
           <b>Skills:</b> React, Vue.js, HTML, CSS, Tailwind CSS, JavaScript,
           TypeScript, Linux, Laravel, Next.js, Node.js, PHP, Python, JQuery,
-          MySQL, PostgreSQL, VSCode, Docker, Git, GitHub, Bootstrap e Bash
+          MySQL, PostgreSQL, VSCode, Docker, Git, GitHub, Bootstrap and Bash
         </span>
 
         <br />
@@ -340,7 +340,7 @@ export default [
         <span style={{ fontSize: "0.8rem" }}>
           <b>Skills:</b> Adobe After Effects, Adobe Photoshop, Adobe Premiere
           Pro, Angular, Svelte, GitLab, C, C#, Java, Electron, Figma, Firebase,
-          Flutter e MongoDB
+          Flutter and MongoDB
         </span>
       </>
     ),

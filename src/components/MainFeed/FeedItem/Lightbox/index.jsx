@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import FeedDetails from "./FeedDetails";
 import ImagePlayer from "./ImagePlayer";
 import { XIcon } from "@phosphor-icons/react";
+import responsive from "./responsive.module.css";
+import PlayerButton from "./PlayerButton";
 
 export default function Lightbox({
   media,
@@ -17,7 +19,7 @@ export default function Lightbox({
 
   return (
     <div
-      className="fixed inset-0 bg-black/90 flex z-50"
+      className={`fixed inset-0 bg-black/90 flex z-50 ${responsive.lightboxContainer}`}
       style={{
         opacity: isLightboxOpen ? 1 : 0,
         transition: "opacity 0.3s ease-in-out",
@@ -25,7 +27,9 @@ export default function Lightbox({
       }}
     >
       {/* left feed item resume */}
-      <div className="w-[22rem] bg-[var(--background2)] p-6 flex flex-col gap-4">
+      <div
+        className={`w-[22rem] h-full bg-[var(--background2)] p-6 flex flex-col gap-4 ${responsive.feedDetailsContainer}`}
+      >
         <FeedDetails
           {...{
             user,
@@ -53,12 +57,12 @@ export default function Lightbox({
       />
 
       {/* close lightbox */}
-      <div
-        className="absolute top-4 right-4 cursor-pointer rounded-full bg-black/50 p-2 border border-white/50"
+      <PlayerButton
+        top="1rem"
+        right="1rem"
+        icon={<XIcon />}
         onClick={onClose}
-      >
-        <XIcon size={18} color="white" weight="bold" />
-      </div>
+      />
     </div>
   );
 }

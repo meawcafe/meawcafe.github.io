@@ -3,6 +3,8 @@ import ItemHeader from "./ItemHeader";
 import Lightbox from "./Lightbox";
 import SocialInteractions from "./SocialInteractions";
 import { ArrowBendRightDownIcon } from "@phosphor-icons/react";
+import { useScrollStore } from "../../../store/scroll";
+import { useOverflowStore } from "./itemOffsetTop";
 
 export default function FeedItem({
   section_id,
@@ -12,16 +14,22 @@ export default function FeedItem({
   media = null,
   social_info,
   overflow = false,
-  setFeedOffsetTopInfo,
-  focusedFeedItemId,
-  scrollHeight,
 }) {
-  const [isFocused, setIsFocused] = useState(false);
+  const { setFeedOffsetTopInfo } = useScrollStore.getState();
   const feedItemRef = useRef(null);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [isOverflow, setIsOverflow] = useState(overflow);
+  let windowResizeTimeout = null;
 
-  function handleResize() {
+  const overflowMap = useOverflowStore((state) => state.overflowMap);
+  const { setOverflow } = useOverflowStore.getState();
+
+  const handleOverflowChange = (boolean) => {
+    setOverflow(section_id, boolean);
+    setIsOverflow(boolean);
+  };
+
+  const updateThisOffsetTop = () => {
     if (feedItemRef.current) {
       setFeedOffsetTopInfo((prev) => ({
         ...prev,
@@ -31,23 +39,34 @@ export default function FeedItem({
         },
       }));
     }
-  }
+  };
+
+  const windowResizeHandler = () => {
+    if (windowResizeTimeout) {
+      clearTimeout(windowResizeTimeout);
+    }
+
+    windowResizeTimeout = setTimeout(() => {
+      updateThisOffsetTop();
+    }, 1000);
+  };
 
   useEffect(() => {
-    handleResize();
+    updateThisOffsetTop();
+    handleOverflowChange(overflow);
+
+    window.addEventListener("resize", windowResizeHandler);
+
+    // cleanup when component unmounts
+    return () => {
+      window.removeEventListener("resize", windowResizeHandler);
+    };
   }, []);
 
+  // update this.offsetTop when overflowMap changes
   useEffect(() => {
-    handleResize();
-  }, [scrollHeight]);
-
-  useEffect(() => {
-    if (focusedFeedItemId === section_id) {
-      setIsFocused(true);
-    } else {
-      setIsFocused(false);
-    }
-  }, [focusedFeedItemId]);
+    updateThisOffsetTop();
+  }, [overflowMap, section_id]);
 
   return (
     <>
@@ -96,7 +115,7 @@ export default function FeedItem({
               ></div>
               <span
                 className="flex text-[0.9rem] gap-1 mt-4 text-blue-500 z-10 cursor-pointer absolute hover:font-bold bottom-[-0.6rem] select-none"
-                onClick={() => setIsOverflow(!isOverflow)}
+                onClick={() => handleOverflowChange(!isOverflow)}
               >
                 {isOverflow && "Show more"}
                 <ArrowBendRightDownIcon
@@ -142,7 +161,6 @@ export default function FeedItem({
         )}
 
         {/* social interactions */}
-
         <SocialInteractions {...social_info} />
       </div>
     </>

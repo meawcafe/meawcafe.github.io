@@ -1,4 +1,5 @@
 import { ArrowLeftIcon } from "@phosphor-icons/react";
+import PlayerButton from "./PlayerButton";
 
 export default function ImagePlayer({
   media,
@@ -9,6 +10,7 @@ export default function ImagePlayer({
   onClose,
 }) {
   const handleNavigation = (direction) => {
+    console.log("clicked");
     const newIndex =
       (selectedMediaIndex + direction + media.length) % media.length;
     setSelectedMedia(media[newIndex]);
@@ -20,6 +22,22 @@ export default function ImagePlayer({
       className="w-full flex-1 h-full flex items-center justify-center relative select-none"
       onClick={(e) => e.target === e.currentTarget && onClose()}
     >
+      {/* navigation */}
+      <PlayerButton
+        top="50%"
+        left="1rem"
+        transform="translateY(-50%)"
+        icon={<ArrowLeftIcon />}
+        onClick={() => handleNavigation(-1)}
+      />
+      <PlayerButton
+        top="50%"
+        right="1rem"
+        transform="translateY(-50%) rotate(180deg)"
+        icon={<ArrowLeftIcon />}
+        onClick={() => handleNavigation(1)}
+      />
+
       {selectedMedia.type === "image" ? (
         <img
           src={selectedMedia.url}
@@ -36,27 +54,6 @@ export default function ImagePlayer({
           allowFullScreen
         />
       )}
-
-      {/* navigation */}
-      <div className="absolute flex justify-between w-full px-4 top-1/2 transform -translate-y-1/2">
-        <span
-          className="bg-black/50 p-2 rounded-full cursor-pointer border border-white/50"
-          onClick={() => handleNavigation(-1)}
-        >
-          <ArrowLeftIcon size={18} color="white" weight="bold" />
-        </span>
-        <span
-          className="bg-black/50 p-2 rounded-full cursor-pointer border border-white/50"
-          onClick={() => handleNavigation(1)}
-        >
-          <ArrowLeftIcon
-            size={18}
-            color="white"
-            weight="bold"
-            className="rotate-180"
-          />
-        </span>
-      </div>
     </div>
   );
 }

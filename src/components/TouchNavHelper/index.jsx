@@ -1,10 +1,16 @@
-import { ArrowLineLeftIcon, ArrowLineRightIcon } from "@phosphor-icons/react";
+import {
+  ArrowLineLeftIcon,
+  ArrowLineRightIcon,
+  XIcon,
+} from "@phosphor-icons/react";
+import { useTouchStore } from "../../store/touch";
 
-export default function TouchNavHelper({
-  touchPositionY,
-  showNavHelperLeft,
-  showNavHelperRight,
-}) {
+export default function TouchNavHelper() {
+  const sectionIndex = useTouchStore((state) => state.sectionIndex);
+  const touchPositionY = useTouchStore((state) => state.touchPositionY);
+  const showNavHelperLeft = useTouchStore((state) => state.showNavHelperLeft);
+  const showNavHelperRight = useTouchStore((state) => state.showNavHelperRight);
+
   return (
     <>
       <div
@@ -18,11 +24,15 @@ export default function TouchNavHelper({
             "left 300ms cubic-bezier(.26,.01,0,1.59), opacity 300ms cubic-bezier(.26,.01,0,1.59), scale 300ms cubic-bezier(.26,.01,0,1.59), top 500ms ease",
         }}
       >
-        <ArrowLineRightIcon
-          size={50}
-          weight="bold"
-          color="var(--accent-color1)"
-        />
+        {showNavHelperLeft && sectionIndex === 0 ? (
+          <XIcon size={50} weight="bold" color="red" />
+        ) : (
+          <ArrowLineRightIcon
+            size={50}
+            weight="bold"
+            color="var(--accent-color1)"
+          />
+        )}
       </div>
 
       <div
@@ -36,11 +46,15 @@ export default function TouchNavHelper({
             "right 300ms cubic-bezier(.26,.01,0,1.59), opacity 300ms cubic-bezier(.26,.01,0,1.59), scale 300ms cubic-bezier(.26,.01,0,1.59), top 500ms ease",
         }}
       >
-        <ArrowLineLeftIcon
-          size={50}
-          weight="bold"
-          color="var(--accent-color1)"
-        />
+        {showNavHelperRight && sectionIndex === 2 ? (
+          <XIcon size={50} weight="bold" color="red" />
+        ) : (
+          <ArrowLineLeftIcon
+            size={50}
+            weight="bold"
+            color="var(--accent-color1)"
+          />
+        )}
       </div>
     </>
   );

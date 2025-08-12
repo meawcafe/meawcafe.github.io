@@ -2,15 +2,16 @@ import FeedItem from "./FeedItem";
 import FeedTabs from "./FeedTabs";
 import feed from "../../data/feed.jsx";
 import clsx from "clsx";
+import { useTouchStore } from "../../store/touch.js";
+import { useScrollStore } from "../../store/scroll.js";
+import { useEffect, useRef } from "react";
 
-export default function MainFeed({
-  feedContainerRef,
-  setFeedOffsetTopInfo,
-  focusedFeedItemId,
-  scrollHeight,
-  scrollOnTop,
-  sectionIndex,
-}) {
+export default function MainFeed() {
+  const localFeedContainerRef = useRef(null);
+  const { setFeedContainerRef } = useScrollStore.getState();
+  const sectionIndex = useTouchStore((state) => state.sectionIndex);
+  const scrollOnTop = useScrollStore((state) => state.scrollOnTop);
+
   const mainFeedClasses = clsx(
     "main-feed-res w-full flex-1 overflow-x-hidden overflow-y-auto flex flex-col p-[3%] pb-0 relative",
     {
@@ -18,21 +19,25 @@ export default function MainFeed({
     }
   );
 
+  useEffect(() => {
+    setFeedContainerRef(localFeedContainerRef);
+    console.log("Feed container ref set:", localFeedContainerRef);
+  }, [setFeedContainerRef]);
+
   return (
     <div
       className={mainFeedClasses}
       style={{
         paddingTop: scrollOnTop ? `2rem` : "0.4rem",
-        scale: 1,
         opacity: 1,
         transition:
           "padding-top 200ms cubic-bezier(.57,.01,.27,1), scale 400ms 100ms cubic-bezier(.57,.01,.27,1), opacity 500ms ease",
       }}
     >
-      <FeedTabs {...{ scrollOnTop }} />
+      <FeedTabs />
 
       <div
-        ref={feedContainerRef}
+        ref={localFeedContainerRef}
         className="overflow-x-hidden overflow-y-auto flex flex-col gap-4 pb-8 relative"
       >
         {feed.map((item, index) => (
@@ -40,9 +45,6 @@ export default function MainFeed({
             key={index}
             {...{
               ...item,
-              setFeedOffsetTopInfo,
-              focusedFeedItemId,
-              scrollHeight,
             }}
           />
         ))}

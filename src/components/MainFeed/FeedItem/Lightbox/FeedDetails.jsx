@@ -1,5 +1,6 @@
 import { DotsThreeOutlineIcon } from "@phosphor-icons/react";
 import SocialInteractions from "../SocialInteractions";
+import responsive from "./responsive.module.css";
 
 export default function FeedDetails({
   user,
@@ -18,7 +19,7 @@ export default function FeedDetails({
   };
 
   return (
-    <div className="flex flex-col h-screen overflow-y-hidden">
+    <div className="flex flex-col h-full overflow-y-hidden">
       <div className="w-full flex gap-3">
         <img
           src={user.avatar}
@@ -45,9 +46,15 @@ export default function FeedDetails({
 
       <SocialInteractions {...social_info} />
 
-      <span className="text-gray-600 text-base mt-4">Gallery</span>
-
-      <div className="flex flex-wrap gap-1 select-none overflow-x-hidden overflow-y-auto">
+      {/* <span className="text-gray-600 text-base mt-4"> */}
+      <span
+        className={`text-gray-600 text-base mt-4 ${responsive.galleryTitle}`}
+      >
+        Gallery
+      </span>
+      <div
+        className={`flex flex-wrap gap-1 select-none overflow-x-hidden overflow-y-auto ${responsive.galleryTitle}`}
+      >
         {media.map((item, index) => (
           <div
             key={index}

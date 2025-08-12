@@ -1,4 +1,8 @@
-export default function FeedTabs({ scrollOnTop }) {
+import { useScrollStore } from "../../store/scroll";
+
+export default function FeedTabs() {
+  const scrollOnTop = useScrollStore((state) => state.scrollOnTop);
+
   return (
     <div
       className="w-full h-min flex text-sm items-center justify-between select-none pr-[1rem]"

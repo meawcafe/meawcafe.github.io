@@ -1,109 +1,34 @@
-import { ArrowLineLeftIcon, ArrowLineRightIcon } from "@phosphor-icons/react";
 import LeftSidebar from "./components/LeftSidebar";
 import MainFeed from "./components/MainFeed";
 import RightSidebar from "./components/RightSidebar";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import TouchNavHelper from "./components/TouchNavHelper";
+import { useTouchNavigation } from "./hooks/useTouchNavigation";
+import useFeedScrollTracker from "./hooks/useFeedScrollTracker";
+import { useScrollStore } from "./store/scroll";
 
 export default function App() {
-  // touch events
-  const [sectionIndex, setSectionIndex] = useState(1);
-  const [touchPositionY, setTouchPositionY] = useState(0);
-  const [showNavHelperLeft, setShowNavHelperLeft] = useState(false);
-  const [showNavHelperRight, setShowNavHelperRight] = useState(false);
+  const { handleTouchStart, handleTouchEnd, handleTouchMove } =
+    useTouchNavigation();
 
-  const feedContainerRef = useRef(null);
-  const [scrollHeight, setScrollHeight] = useState(0);
-  const [scrollOnTop, setScrollOnTop] = useState(true);
-  const [feedOffsetTopInfo, setFeedOffsetTopInfo] = useState({
-    "about-me": null,
-    education: null,
-    "work-experience": null,
-    skills: null,
-    projects: null,
-    "contact-me": null,
+  const feedContainerRef = useScrollStore((state) => state.feedContainerRef);
+  const feedOffsetTopInfo = useScrollStore((state) => state.feedOffsetTopInfo);
+
+  const { handleScroll } = useFeedScrollTracker({
+    feedContainerRef,
   });
-  const [focusedFeedItemId, setFocusedFeedItemId] = useState("about-me");
-
-  const handleScroll = () => {
-    const container = feedContainerRef.current;
-    const scrollTop = container.scrollTop;
-
-    // Update scrollOnTop state based on scroll position
-    setScrollOnTop(scrollTop < 15);
-
-    // compare the scrollTop with the offsetTop of each section
-    const visibleSection = Object.entries(feedOffsetTopInfo).reduce(
-      (closest, [key, data]) => {
-        const offsetTop = data.offsetTopSize;
-        const distance = Math.abs(scrollTop - offsetTop);
-        return distance < closest.distance ? { key, distance } : closest;
-      },
-      { key: null, distance: Infinity }
-    );
-
-    setFocusedFeedItemId(visibleSection.key);
-    setScrollHeight(container.scrollHeight - container.clientHeight);
-  };
 
   useEffect(() => {
+    if (!feedContainerRef) return;
+
     const container = feedContainerRef.current;
     container.addEventListener("scroll", handleScroll);
 
-    // Cleanup function to remove the event listener
+    // cleanup when component unmounts
     return () => {
       container.removeEventListener("scroll", handleScroll);
     };
-  }, [feedOffsetTopInfo]);
-
-  //
-
-  // Touch Events
-  const touchStartRef = useRef(null);
-  const touchEndRef = useRef(null);
-
-  const handleTouchStart = (event) => {
-    touchStartRef.current = event.touches[0].clientX;
-  };
-
-  const handleTouchEnd = (event) => {
-    touchEndRef.current = event.changedTouches[0].clientX;
-    const dragDistance = touchEndRef.current - touchStartRef.current;
-
-    setShowNavHelperLeft(false);
-    setShowNavHelperRight(false);
-
-    if (Math.abs(dragDistance) > 100) {
-      if (dragDistance > 0) {
-        if (sectionIndex - 1 < 0) return;
-        setSectionIndex(sectionIndex - 1);
-      } else {
-        if (sectionIndex + 1 > 2) return;
-        setSectionIndex(sectionIndex + 1);
-      }
-    }
-  };
-
-  const handleTouchMove = (event) => {
-    const currentX = event.touches[0].clientX;
-    const currentY = event.touches[0].clientY;
-    const deltaX = currentX - touchStartRef.current;
-
-    setTouchPositionY(currentY - 48);
-
-    if (Math.abs(deltaX) > 100) {
-      if (deltaX > 0) {
-        setShowNavHelperLeft(true);
-        setShowNavHelperRight(false);
-      } else {
-        setShowNavHelperRight(true);
-        setShowNavHelperLeft(false);
-      }
-    } else {
-      setShowNavHelperLeft(false);
-      setShowNavHelperRight(false);
-    }
-  };
+  }, [feedOffsetTopInfo, feedContainerRef]);
 
   return (
     <div className="w-screen h-screen flex relative justify-center overflow-hidden bg-[var(--background2)]">
@@ -113,24 +38,12 @@ export default function App() {
         onTouchEnd={handleTouchEnd}
         onTouchMove={handleTouchMove}
       >
-        <LeftSidebar {...{ focusedFeedItemId, sectionIndex }} />
-        <MainFeed
-          {...{
-            feedContainerRef,
-            setFeedOffsetTopInfo,
-            focusedFeedItemId,
-            scrollHeight,
-            scrollOnTop,
-            sectionIndex,
-          }}
-        />
-        <RightSidebar {...{ sectionIndex }} />
+        <LeftSidebar />
+        <MainFeed />
+        <RightSidebar />
       </div>
 
-      {/* Touch nav helper */}
-      <TouchNavHelper
-        {...{ touchPositionY, showNavHelperLeft, showNavHelperRight }}
-      />
+      <TouchNavHelper />
     </div>
   );
 }
