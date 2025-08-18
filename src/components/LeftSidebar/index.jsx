@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import Navbar from "./Navbar";
 import Profile from "./Profile";
-import { useTouchStore } from "../../store/touch";
+import { useTouchStore } from "~/store/touch";
 
 export default function LeftSidebar() {
   const sectionIndex = useTouchStore((state) => state.sectionIndex);

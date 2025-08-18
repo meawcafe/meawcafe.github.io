@@ -1,4 +1,4 @@
-import { useScrollStore } from "../store/scroll";
+import { useScrollStore } from "~/store/scroll";
 
 const MIN_SCROLL_TOP = 15;
 

@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useTouchStore } from "../store/touch";
+import { useTouchStore } from "~/store/touch";
 
 const MIN_DRAG_DISTANCE = 100;
 

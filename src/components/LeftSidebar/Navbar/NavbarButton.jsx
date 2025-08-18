@@ -1,6 +1,6 @@
 import { IconContext } from "@phosphor-icons/react";
-import { useScrollStore } from "../../../store/scroll";
-import { useTouchStore } from "../../../store/touch";
+import { useScrollStore } from "~/store/scroll";
+import { useTouchStore } from "~/store/touch";
 
 export default function NavbarButton({ icon, label, buttonId }) {
   const focusedFeedItemId = useScrollStore((state) => state.focusedFeedItemId);

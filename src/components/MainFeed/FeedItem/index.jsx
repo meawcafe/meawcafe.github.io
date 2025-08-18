@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import { ArrowBendRightDownIcon } from "@phosphor-icons/react";
+import { useOverflowStore } from "./feedOverflowStore";
+import { useScrollStore } from "~/store/scroll";
 import ItemHeader from "./ItemHeader";
 import Lightbox from "./Lightbox";
 import SocialInteractions from "./SocialInteractions";
-import { ArrowBendRightDownIcon } from "@phosphor-icons/react";
-import { useScrollStore } from "../../../store/scroll";
-import { useOverflowStore } from "./itemOffsetTop";
 
 export default function FeedItem({
   section_id,
@@ -73,7 +73,7 @@ export default function FeedItem({
       {media && (
         <Lightbox
           onClose={() => setIsLightboxOpen(false)}
-          {...{ media, user, timestamp, content, social_info, isLightboxOpen }}
+          {...{ media, user, timestamp, social_info, isLightboxOpen }}
         />
       )}
       <div

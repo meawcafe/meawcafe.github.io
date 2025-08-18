@@ -1,10 +1,10 @@
+import clsx from "clsx";
+import { useEffect, useRef } from "react";
+import { useScrollStore } from "~/store/scroll";
+import { useTouchStore } from "~/store/touch";
 import FeedItem from "./FeedItem";
 import FeedTabs from "./FeedTabs";
-import feed from "../../data/feed.jsx";
-import clsx from "clsx";
-import { useTouchStore } from "../../store/touch.js";
-import { useScrollStore } from "../../store/scroll.js";
-import { useEffect, useRef } from "react";
+import feed from "~/data/feed";
 
 export default function MainFeed() {
   const localFeedContainerRef = useRef(null);

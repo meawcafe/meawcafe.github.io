@@ -1,15 +1,14 @@
 import { useState } from "react";
+import { XIcon } from "@phosphor-icons/react";
 import FeedDetails from "./FeedDetails";
 import ImagePlayer from "./ImagePlayer";
-import { XIcon } from "@phosphor-icons/react";
-import responsive from "./responsive.module.css";
 import PlayerButton from "./PlayerButton";
+import responsive from "./responsive.module.css";
 
 export default function Lightbox({
   media,
   user,
   timestamp,
-  content,
   social_info,
   isLightboxOpen,
   onClose,
@@ -34,7 +33,6 @@ export default function Lightbox({
           {...{
             user,
             timestamp,
-            content,
             media,
             social_info,
             selectedMedia,

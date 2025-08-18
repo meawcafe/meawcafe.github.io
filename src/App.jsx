@@ -1,11 +1,11 @@
-import LeftSidebar from "./components/LeftSidebar";
 import MainFeed from "./components/MainFeed";
 import RightSidebar from "./components/RightSidebar";
-import { useRef, useEffect } from "react";
+import { useEffect } from "react";
 import TouchNavHelper from "./components/TouchNavHelper";
 import { useTouchNavigation } from "./hooks/useTouchNavigation";
 import useFeedScrollTracker from "./hooks/useFeedScrollTracker";
 import { useScrollStore } from "./store/scroll";
+import LeftSidebar from "./components/LeftSidebar";
 
 export default function App() {
   const { handleTouchStart, handleTouchEnd, handleTouchMove } =

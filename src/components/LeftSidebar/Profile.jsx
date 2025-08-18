@@ -1,4 +1,4 @@
-import cat_img from "../../assets/cat.jpeg";
+import cat_img from "~/assets/cat.jpeg";
 
 export default function Profile() {
   return (

@@ -1,4 +1,4 @@
-import { useScrollStore } from "../../store/scroll";
+import { useScrollStore } from "~/store/scroll";
 
 export default function FeedTabs() {
   const scrollOnTop = useScrollStore((state) => state.scrollOnTop);

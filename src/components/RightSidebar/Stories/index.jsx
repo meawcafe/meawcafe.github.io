@@ -23,7 +23,6 @@ export default function Stories() {
         src="https://widget.deezer.com/widget/dark/playlist/13110811083"
         width="100%"
         height="300"
-        allowtransparency="true"
         allow="encrypted-media; clipboard-write"
       ></iframe>
     </div>

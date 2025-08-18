@@ -5,7 +5,6 @@ import responsive from "./responsive.module.css";
 export default function FeedDetails({
   user,
   timestamp,
-  content,
   media,
   social_info,
   selectedMedia,

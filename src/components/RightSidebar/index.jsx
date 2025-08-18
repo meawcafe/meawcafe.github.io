@@ -1,7 +1,7 @@
 import clsx from "clsx";
+import { useTouchStore } from "~/store/touch";
 import Stories from "./Stories";
 import ViewsCounter from "./ViewsCounter";
-import { useTouchStore } from "../../store/touch";
 
 export default function RightSidebar() {
   const sectionIndex = useTouchStore((state) => state.sectionIndex);

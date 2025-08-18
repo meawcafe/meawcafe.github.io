@@ -3,7 +3,7 @@ import {
   ArrowLineRightIcon,
   XIcon,
 } from "@phosphor-icons/react";
-import { useTouchStore } from "../../store/touch";
+import { useTouchStore } from "~/store/touch";
 
 export default function TouchNavHelper() {
   const sectionIndex = useTouchStore((state) => state.sectionIndex);
