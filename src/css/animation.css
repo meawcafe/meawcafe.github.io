@@ -1,0 +1,8 @@
+.anin-on-press {
+  transition: transform 100ms ease;
+}
+
+.anin-on-press:active {
+  transform: scale(0.9);
+  transition: none !important;
+} 

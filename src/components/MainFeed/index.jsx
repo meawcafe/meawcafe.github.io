@@ -3,8 +3,8 @@ import { useEffect, useRef } from "react";
 import { useScrollStore } from "~/store/scroll";
 import { useTouchStore } from "~/store/touch";
 import FeedItem from "./FeedItem";
-import FeedTabs from "./FeedTabs";
 import feed from "~/data/feed";
+import FeedTabs from "./FeedTabs";
 
 export default function MainFeed() {
   const localFeedContainerRef = useRef(null);
@@ -21,7 +21,6 @@ export default function MainFeed() {
 
   useEffect(() => {
     setFeedContainerRef(localFeedContainerRef);
-    console.log("Feed container ref set:", localFeedContainerRef);
   }, [setFeedContainerRef]);
 
   return (
@@ -38,7 +37,7 @@ export default function MainFeed() {
 
       <div
         ref={localFeedContainerRef}
-        className="overflow-x-hidden overflow-y-auto flex flex-col gap-4 pb-8 relative"
+        className="overflow-x-hidden overflow-y-auto flex flex-col gap-4 pb-8 relative overscroll-contain"
       >
         {feed.map((item, index) => (
           <FeedItem

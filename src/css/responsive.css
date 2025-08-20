@@ -1,4 +1,9 @@
 @media (max-width: 768px) {
+  .only-show-on-md {
+    display: flex!important;
+  }
+
+
   /* Left Sidebar */
   .left-sidebar-res {
     background-color: var(--background1);

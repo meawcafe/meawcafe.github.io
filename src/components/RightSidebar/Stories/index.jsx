@@ -1,7 +1,6 @@
 export default function Stories() {
   return (
     <div className="flex flex-col">
-      <h3 className="text-xl font-bold w-max">Themes</h3>
       <h3 className="text-xl font-bold w-max">Stories</h3>
       {/* <blockquote class="twitter-tweet">
         <p lang="zxx" dir="ltr">

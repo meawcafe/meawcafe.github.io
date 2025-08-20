@@ -31,7 +31,7 @@ export default function App() {
   }, [feedOffsetTopInfo, feedContainerRef]);
 
   return (
-    <div className="w-screen h-screen flex relative justify-center overflow-hidden bg-[var(--background2)]">
+    <div className="w-screen h-screen flex relative justify-center overflow-hidden">
       <div
         className="flex w-full max-w-[1280px]"
         onTouchStart={handleTouchStart}

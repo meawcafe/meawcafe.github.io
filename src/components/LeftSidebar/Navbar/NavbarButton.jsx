@@ -8,22 +8,18 @@ export default function NavbarButton({ icon, label, buttonId }) {
 
   const { setSectionIndex } = useTouchStore.getState();
 
-  function handleClick() {
+  const scrollIntoView = () => {
     setSectionIndex(1);
     const target = feedContainerRef.current.querySelector(`#${buttonId}`);
     feedContainerRef.current.scrollTo({
       top: target.offsetTop,
       behavior: "smooth",
     });
-    // document.getElementById(buttonId)?.scrollIntoView({
-    //   behavior: "smooth",
-    //   block: "start",
-    // });
-  }
+  };
 
   return (
     <button
-      className="flex items-center w-full gap-2 p-2 rounded-2xl"
+      className="anin-on-press flex items-center w-full gap-2 p-2 rounded-2xl"
       style={{
         backgroundColor: focusedFeedItemId == buttonId && "var(--text1)",
         color:
@@ -33,7 +29,7 @@ export default function NavbarButton({ icon, label, buttonId }) {
         margin: focusedFeedItemId == buttonId ? "0.6rem 0" : "0",
         transition: "200ms 300ms cubic-bezier(.57,.01,.27,1)",
       }}
-      onClick={handleClick}
+      onMouseDown={scrollIntoView}
     >
       <IconContext.Provider
         value={{

@@ -1,4 +1,4 @@
-import { ArrowLeftIcon } from "@phosphor-icons/react";
+import { ArrowLeftIcon, ArrowRightIcon } from "@phosphor-icons/react";
 import PlayerButton from "./PlayerButton";
 
 export default function ImagePlayer({
@@ -26,15 +26,15 @@ export default function ImagePlayer({
       <PlayerButton
         top="50%"
         left="1rem"
-        transform="translateY(-50%)"
+        // transform="translateY(-50%)"
         icon={<ArrowLeftIcon />}
         onClick={() => handleNavigation(-1)}
       />
       <PlayerButton
         top="50%"
         right="1rem"
-        transform="translateY(-50%) rotate(180deg)"
-        icon={<ArrowLeftIcon />}
+        // transform="translateY(-50%) rotate(180deg)"
+        icon={<ArrowRightIcon />}
         onClick={() => handleNavigation(1)}
       />
 

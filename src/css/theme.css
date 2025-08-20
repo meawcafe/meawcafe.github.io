@@ -1,4 +1,4 @@
-.white-mode {
+[data-theme='white']  {
   --accent-color1: #4e54c8;
   --accent-color2: #8f94fb;
 

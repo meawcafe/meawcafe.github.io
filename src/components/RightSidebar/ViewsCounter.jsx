@@ -1,7 +1,12 @@
+import EasterEggButton from "../EasterEggButton";
+import video1 from "~/assets/2.mp4";
+
 export default function ViewsCounter() {
   return (
-    <div className="flex flex-col relative">
-      <h3 className="text-xl font-bold w-max">Views Counter</h3>
+    <div className="flex flex-col relative gap-4">
+      <h3 className="text-xl font-bold w-max">
+        Views Counter <EasterEggButton video={video1} />
+      </h3>
 
       {/* Imagem da sombra (segunda imagem, transformada) */}
       <img

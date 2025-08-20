@@ -18,8 +18,13 @@
   -webkit-text-size-adjust: 100%;
 }
 
+body {
+  background-color: var(--background2);
+  font-family: "Quicksand", serif;
+}
+
 a {
-  color: blue;
+  color: var(--accent-color1);
   text-decoration: none;
 }
 
@@ -44,7 +49,7 @@ button {
 }
 
 img {
-  display: block;
+  /* display: block; */
 }
 
 .twitter-timeline {
@@ -52,18 +57,7 @@ img {
 }
 
 * {
-  font-family: "Quicksand", serif;
   box-sizing: border-box;
-  /* color: var(--text1);
-
-  margin: 0;
-  padding: 0; */
-
-
-  /* outline: none;
-  text-decoration: none;
-
-  border: none; */
 }
 
 ::-webkit-scrollbar {

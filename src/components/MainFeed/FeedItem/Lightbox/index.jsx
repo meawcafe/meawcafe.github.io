@@ -18,7 +18,7 @@ export default function Lightbox({
 
   return (
     <div
-      className={`fixed inset-0 bg-black/90 flex z-50 ${responsive.lightboxContainer}`}
+      className={`fixed inset-0 bg-black/85 flex z-50 ${responsive.lightboxContainer}`}
       style={{
         opacity: isLightboxOpen ? 1 : 0,
         transition: "opacity 0.3s ease-in-out",

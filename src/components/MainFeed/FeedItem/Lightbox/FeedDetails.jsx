@@ -32,7 +32,7 @@ export default function FeedDetails({
               <span className="font-bold">{user.name}</span>·
               <span>{user.at}</span>
             </div>
-            <span className="hover:cursor-pointer">
+            <span className="hover:cursor-pointer anin-on-press">
               <DotsThreeOutlineIcon size={24} />
             </span>
           </div>

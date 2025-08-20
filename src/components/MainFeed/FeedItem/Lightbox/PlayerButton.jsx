@@ -10,7 +10,7 @@ export default function PlayerButton({
 }) {
   return (
     <span
-      className="absolute bg-black/50 p-2 rounded-full cursor-pointer border border-white/50"
+      className="anin-on-press absolute bg-black/50 p-2 rounded-full cursor-pointer border border-white/50"
       style={{ top, left, right, transform }}
       onClick={onClick}
     >

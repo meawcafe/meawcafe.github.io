@@ -114,7 +114,7 @@ export default function FeedItem({
                 }}
               ></div>
               <span
-                className="flex text-[0.9rem] gap-1 mt-4 text-blue-500 z-10 cursor-pointer absolute hover:font-bold bottom-[-0.6rem] select-none"
+                className="anin-on-press flex text-[0.9rem] gap-1 mt-4 text-blue-500 z-10 cursor-pointer absolute hover:font-bold bottom-[-0.6rem] select-none"
                 onClick={() => handleOverflowChange(!isOverflow)}
               >
                 {isOverflow && "Show more"}

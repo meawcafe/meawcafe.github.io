@@ -6,7 +6,7 @@ export default [
   {
     section_id: "about-me",
     user: {
-      name: "Milton M",
+      name: "Milton M.",
       at: "@meawcafe",
       avatar: "https://avatars.githubusercontent.com/u/44252635?v=4",
     },
@@ -82,7 +82,7 @@ export default [
   {
     section_id: "education",
     user: {
-      name: "Milton M",
+      name: "Milton M.",
       at: "@meawcafe",
       avatar: "https://avatars.githubusercontent.com/u/44252635?v=4",
     },
@@ -225,7 +225,7 @@ export default [
   {
     section_id: "work-experience",
     user: {
-      name: "Milton M",
+      name: "Milton M.",
       at: "@meawcafe",
       avatar: "https://avatars.githubusercontent.com/u/44252635?v=4",
     },
@@ -297,7 +297,7 @@ export default [
   {
     section_id: "skills",
     user: {
-      name: "Milton M",
+      name: "Milton M.",
       at: "@meawcafe",
       avatar: "https://avatars.githubusercontent.com/u/44252635?v=4",
     },
@@ -357,7 +357,7 @@ export default [
   {
     section_id: "projects",
     user: {
-      name: "Milton M",
+      name: "Milton M.",
       at: "@meawcafe",
       avatar: "https://avatars.githubusercontent.com/u/44252635?v=4",
     },
@@ -481,7 +481,7 @@ export default [
   {
     section_id: "contact-me",
     user: {
-      name: "Milton M",
+      name: "Milton M.",
       at: "@meawcafe",
       avatar: "https://avatars.githubusercontent.com/u/44252635?v=4",
     },
