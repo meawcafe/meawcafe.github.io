@@ -24,7 +24,7 @@ export default function LeftSidebar() {
       }}
     >
       <div
-        className="anin-on-press only-show-on-md gap-2 items-center absolute bottom-14 right-6 text-[var(--accent-color1)] cursor-pointer bg-[var(--background2)] py-2 pl-5 pr-3 rounded-full"
+        className="anin-on-press only-show-on-md gap-2 items-center absolute top-4 right-4 text-[var(--accent-color1)] cursor-pointer bg-[var(--background2)] py-2 pl-5 pr-3 rounded-full"
         style={{
           display: "none",
         }}
