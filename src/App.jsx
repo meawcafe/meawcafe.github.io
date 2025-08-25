@@ -6,6 +6,7 @@ import { useTouchNavigation } from "./hooks/useTouchNavigation";
 import useFeedScrollTracker from "./hooks/useFeedScrollTracker";
 import { useScrollStore } from "./store/scroll";
 import LeftSidebar from "./components/LeftSidebar";
+import ChangelogModal from "./components/ChangelogModal";
 
 export default function App() {
   const { handleTouchStart, handleTouchEnd, handleTouchMove } =
@@ -32,6 +33,7 @@ export default function App() {
 
   return (
     <div className="w-screen h-screen flex relative justify-center overflow-hidden">
+      <ChangelogModal />
       <div
         className="flex w-full max-w-[1280px]"
         onTouchStart={handleTouchStart}
