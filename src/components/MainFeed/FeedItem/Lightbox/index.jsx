@@ -21,7 +21,10 @@ export default function Lightbox({
       className={`fixed inset-0 bg-black/85 flex z-50 ${responsive.lightboxContainer}`}
       style={{
         opacity: isLightboxOpen ? 1 : 0,
-        transition: "opacity 0.3s ease-in-out",
+        left: isLightboxOpen ? 0 : "100%",
+        transition: isLightboxOpen
+          ? `opacity 0.3s ease-in-out, left 0s 0s`
+          : `opacity 0.3s ease-in-out, left 0s 0.3s`,
         pointerEvents: isLightboxOpen ? "auto" : "none",
       }}
     >
