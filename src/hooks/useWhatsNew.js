@@ -12,6 +12,8 @@ export default function useWhatsNew() {
     setIsModalOpen(false);
     if (dontShowAgain) {
       localStorage.setItem(WHATS_NEW_KEY, CURRENT_VERSION);
+    } else {
+      localStorage.removeItem(WHATS_NEW_KEY);
     }
   };
 
