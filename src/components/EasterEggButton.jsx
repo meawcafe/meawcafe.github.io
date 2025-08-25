@@ -16,7 +16,7 @@ export default function EasterEggButton({ video }) {
     <video loop onloadstart="this.volume=0.8; this.play();" style="display: block; padding: 0 20px 0 20px">
     <source src="${video}" type="video/mp4">
     </video>
-    <h1 style="font-size: 2rem">Session Terminated</h1>
+    <h1 style="font-size: 1.2rem">Session Terminated</h1>
     `;
   };
   return (
