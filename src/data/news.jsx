@@ -4,14 +4,24 @@ export default [
   {
     title: "Enhanced Touch & Responsive Design",
     description: [
-      "Navigate faster and easier with new gestures and a layout that adjusts to your device.",
+      "Navigate <b>faster</b> and <b>easier</b> with new gestures and a layout that adjusts to your device.",
     ],
     media: demo_gestures,
   },
   {
+    title: "Built Entirely From Scratch",
+    description: [
+      "This portfolio was developed entirely by me, component by component, inside a <b>React application</b>.",
+      "While many developers rely on tools like <b>Bootstrap</b> or <b>CMS platforms</b> such as WordPress to speed things up, I prefer building from the ground up.",
+      "That choice gives me <b>complete creative freedom</b> and <b>the ability to turn any idea into reality</b>, while also sharpening my skills and deepening my mastery of the core web technologies.",
+    ],
+    media: null,
+    icons: "🐱🍦✨",
+  },
+  {
     title: "Bug Fix: Scroll Issue on Mobile",
     description: [
-      "I fixed a problem where a full-screen absolute div, controlled with pointer-events, caused scrolling to behave strangely on mobile browsers. Now the problem is resolved, and scrolling works smoothly everywhere.",
+      "I fixed a problem where a full-screen absolute div, controlled with <b>pointer-events</b>, caused scrolling to behave strangely on mobile browsers. Now the problem is <b>resolved</b>, and scrolling works smoothly everywhere.",
     ],
     media: null,
     icons: "🐛🔨✨",
@@ -19,7 +29,7 @@ export default [
   {
     title: "Hidden Surprise",
     description: [
-      "There’s a tiny easter egg somewhere on the site... Can you spot it without looking at the code? 😉",
+      "There’s a tiny <b>easter egg</b> somewhere on the site... Can you spot it without looking at the code? 😉",
     ],
     media: null,
     icons: "🔍✨",

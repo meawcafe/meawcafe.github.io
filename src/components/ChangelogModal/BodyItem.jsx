@@ -9,9 +9,11 @@ export default function ChangelogBodyItem({ data, containerWidth }) {
       </h1>
       <span className="text-base text-[var(--text3)] mb-2 text-center max-w-[28rem]">
         {data.description.map((desc, index) => (
-          <p key={index} className="mb-2">
-            {desc}
-          </p>
+          <p
+            key={index}
+            className="mb-2"
+            dangerouslySetInnerHTML={{ __html: desc }}
+          />
         ))}
       </span>
       {data.media && (
