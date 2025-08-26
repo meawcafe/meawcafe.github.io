@@ -4,9 +4,8 @@ This is my personal portfolio, showcasing my projects and skills.
 
 [Visit portfolio](https://meawcafe.github.io/)
 
-<p align="center">
-  <img src="./src/assets/demo.gif" alt="demo" style="border-radius: 10px;">
-</p>
+<img src="./src/assets/demo.gif" alt="demo" style="border-radius: 10px;">
+
 
 ### Technologies Used
 
