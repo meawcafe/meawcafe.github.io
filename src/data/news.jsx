@@ -16,12 +16,13 @@ export default [
       "That choice gives me <b>complete creative freedom</b> and <b>the ability to turn any idea into reality</b>, while also sharpening my skills and deepening my mastery of the core web technologies.",
     ],
     media: null,
-    icons: "🐱🍦✨",
+    icons: "🐱🍦",
   },
   {
-    title: "Bug Fix: Scroll Issue on Mobile",
+    title: "Bug Fix: Scroll & Mobile Height Issue",
     description: [
       "I fixed a problem where a full-screen absolute div, controlled with <b>pointer-events</b>, caused scrolling to behave strangely on mobile browsers. Now the problem is <b>resolved</b>, and scrolling works smoothly everywhere.",
+      "Additionally, I implemented the use of <b>svh</b> in CSS to correctly handle the viewport height on mobile devices, ensuring the layout displays with the proper size.",
     ],
     media: null,
     icons: "🐛🔨✨",

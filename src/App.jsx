@@ -32,7 +32,7 @@ export default function App() {
   }, [feedOffsetTopInfo, feedContainerRef]);
 
   return (
-    <div className="w-screen h-screen flex relative justify-center overflow-hidden">
+    <div className="w-screen h-svh flex relative justify-center overflow-hidden">
       <ChangelogModal />
       <div
         className="flex w-full max-w-[1280px]"
