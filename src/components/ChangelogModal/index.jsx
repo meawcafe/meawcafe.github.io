@@ -41,18 +41,31 @@ export default function ChangelogModal() {
   return (
     // container
     <div
-      className={`fixed inset-0 bg-black/40 flex z-50 p-4`}
+      className={`fixed inset-0 bg-black/60 flex z-50 p-4`}
       style={{
         opacity: isModalOpen ? 1 : 0,
         left: isModalOpen ? 0 : "100%",
         transition: isModalOpen
-          ? `opacity 0.3s ease-in-out, left 0s 0s`
-          : `opacity 0.3s ease-in-out, left 0s 0.3s`,
+          ? `opacity 600ms ease-in-out, left 0s 0s`
+          : `opacity 600ms ease-in-out, left 0s 600ms`,
         pointerEvents: isModalOpen ? "auto" : "none",
       }}
+      onClick={handleCloseModal}
     >
       {/* modal */}
-      <div className="w-full max-w-[40rem] h-max bg-[var(--background1)] flex flex-col m-auto rounded-2xl overflow-hidden shadow-lg border border-black/40">
+      <div
+        className="absolute w-full max-w-[40rem] h-max bg-[var(--background1)] flex flex-col m-auto rounded-2xl overflow-hidden shadow-lg border border-black/40"
+        style={{
+          transition: isModalOpen
+            ? "top 800ms ease, opacity 900ms 100ms"
+            : "top 600ms cubic-bezier(0.8, 0, 1, 1), opacity 500ms 100ms",
+          opacity: isModalOpen ? 1 : 0,
+          top: isModalOpen ? "50%" : "100vh",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+        }}
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* header */}
         <div className="flex justify-between items-center border-b border-black/10 relative">
           <div
